@@ -1,5 +1,5 @@
 const formatValue = (value: number): string =>
-  Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(
+  Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD' }).format(
     value,
   );
 

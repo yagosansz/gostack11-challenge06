@@ -8,6 +8,7 @@ import api from '../../services/api';
 
 import Header from '../../components/Header';
 
+import formatDate from '../../utils/formatDate';
 import formatValue from '../../utils/formatValue';
 
 import { Container, CardContainer, Card, TableContainer } from './styles';
@@ -59,7 +60,7 @@ const Dashboard: React.FC = () => {
         <CardContainer>
           <Card>
             <header>
-              <p>Entradas</p>
+              <p>Income</p>
               <img src={income} alt="Income" />
             </header>
             <h1 data-testid="balance-income">
@@ -68,7 +69,7 @@ const Dashboard: React.FC = () => {
           </Card>
           <Card>
             <header>
-              <p>Saídas</p>
+              <p>Expenses</p>
               <img src={outcome} alt="Outcome" />
             </header>
             <h1 data-testid="balance-outcome">
@@ -90,10 +91,10 @@ const Dashboard: React.FC = () => {
           <table>
             <thead>
               <tr>
-                <th>Título</th>
-                <th>Preço</th>
-                <th>Categoria</th>
-                <th>Data</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Date</th>
               </tr>
             </thead>
 
@@ -107,7 +108,7 @@ const Dashboard: React.FC = () => {
                       : `- ${formatValue(Number(transaction.value))}`}
                   </td>
                   <td>{transaction.category.title}</td>
-                  <td>{transaction.created_at}</td>
+                  <td>{formatDate(new Date(transaction.created_at))}</td>
                 </tr>
               ))}
             </tbody>

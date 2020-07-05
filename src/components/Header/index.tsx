@@ -12,7 +12,6 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => {
   const { pathname } = useLocation<string>();
-  console.log(pathname);
   return (
     <Container size={size}>
       <header>
@@ -20,8 +19,8 @@ const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => {
           <img src={Logo} alt="GoFinances" />
         </Link>
         <nav>
-          <Link to="/">Listagem</Link>
-          <Link to="/import">Importar</Link>
+          <Link to="/">Transactions</Link>
+          <Link to="/import">Import</Link>
         </nav>
       </header>
     </Container>
